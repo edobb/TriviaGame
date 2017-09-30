@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Super Sikk Space Stuff!</title>
 	<!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
@@ -18,14 +18,14 @@
 
 		<div id="questions">
 
-			<p id="countdown-timer"></p>
+			<p id="timer">20</p>
 
 			<form action="">
 				<span>How many planets are there in our Solar System?</span><br>
-			  <input type="radio" name="planets" value="seven"> 7
-			  <input type="radio" name="planets" value="eight"> 8
-				<input type="radio" name="planets" value="ten"> 10
-			  <input id="answer1" type="radio" name="planets" data-value="nine"> 9<br>
+			  <input type="radio" name="planets" data-value="incorrect"> 7
+			  <input type="radio" name="planets" data-value="incorrect"> 8
+				<input type="radio" name="planets" data-value="incorrect"> 10
+			  <input id="answer1" type="radio" name="planets" data-value="correct"> 9<br>
 			  <hr>
 				<span>Which planet has the most moons?</span><br>
 			  <input type="radio" name="moons" value="venus1" data-value="incorrect"> Venus
@@ -60,145 +60,6 @@
 
 
 </div><!--.wrapper-->
-
-<script type="text/javascript">
-	
-//REMEMBER THERE ARE 2 VENUSES SATURNS JUPITERS ETC
-var endGame;
-
-var answers = {
-	correct: 0,
-	wrong: 0,
-	unanswered:0
-};
-//$('#start-button').click(startGame);
-$('#start-button').on('click', function(event){
-startGame();
-
-
-
-var questions = [
-		{
-			question: 'How many planets are within our Solar System?',
-			answers: ['6' , '7' , '8' , '9' ]
-//			correctAnswer : '9'
-		},
-		{
-			question: 'Which planet has the most moons?',
-			answers: ['Venus' , 'Saturn' , 'Mars' , 'Jupiter' ]
-//			correctAnswer : 'Jupiter'
-		},
-		{
-			question: 'The total mass of our sun equals how many earths?',
-			answers: ['125,000' , '50,000' , '1,200,000' , '330,000' ]
-//			correctAnswer : 'Jupiter'
-		},
-		{
-			question: 'Which planet is closest to the sun?',
-			answers: ['Mars' , 'Venus' , 'Earth' , 'Mercury' ]
-//			correctAnswer : 'Mercury'
-		},
-		{
-			question: 'Which planet is the largest?',
-			answers: ['Saturn' , 'Uranus' , 'Neptune' , 'Jupiter' ]
-//			correctAnswer : 'Jupiter'
-		}	
-	];
-var answer1 = $('[name="planets"]:checked').val();
-var answer2 = $('[name="moons"]:checked').val();
-var answer3 = $('[name="mass"]:checked').val();
-var answer4 = $('[name="closest"]:checked').val();
-var answer5 = $('[name="largest"]:checked').val();
-
-
-	if( answer1 === questions[0].answers[3] ){
-			answers.correct++;
-			console.log(answers.correct)
-	};
-	if( answer2 === questions[1].answers[3]) {
-			answers.correct++;
-			console.log(answers.correct)
-	};
-	if ( answer3 === questions[2].answers[3] ){
-			answers.correct++;
-			console.log(answers.correct)	
-	}
-	if ( answer4 === questions[3].answers[3] ) {
-			answers.correct++;
-			console.log(answers.correct)
-	}
-	if ( answer5 === questions[4].answers[3] ) {
-			answers.correct++;
-			console.log(answers.correct)	
-	};
-	if(  ( answer1 !== questions[0].answers[3]) || ( answer2 !== questions[1].answers[3]) || ( answer3 !== questions[2].answers[3] ) || ( answer4 !== questions[3].answers[3] ) || ( answer5 !== questions[4].answers[3] ) )	{
-			answers.wrong++;
-			console.log(answers.wrong)	
-	};
-
-var score = '<p>Your Score:<br>Questions answered correctly: ' + answers.correct + '<br>Questions answered incorrectly: ' + answers.wrong + '<br>Unanswered questions: ' + answers.unanswered + '</p>';
-
-	// $('parentElement').on('click', '.child', function(event){
-	// 	// if(){
-	// 	// 	correctAnswers++
-	// 	// } else if (){
-	// 	// 	wrongAnswers++
-	// 	// } else {
-	// 	// 	unanswered++
-	// 	// };
-	// });
-	// $('#answer2').on('click', function(event){
-	// 	correctAnswers++;
-	// });
-	// $('#answer3').on('click', function(event){
-	// 	correctAnswers++;
-	// });
-	// $('#answer4').on('click', function(event){
-	// 	correctAnswers++;
-	// });
-	// $('#answer5').on('click', function(event){
-	// 	correctAnswers++;
-	// });
-
-function startGame(){
-	endGame = setInterval(results, 5000);
-	//$('#trivia-game').html(questions);
-
-	$('#start-button').addClass('hidden');
-	
-
-	$('#questions').addClass('visible');
-};
-function results(){
-	$('#trivia-game').html(score);
-};
-
-
-
-});
-
-
-
-//REMEMBER THERE ARE 2 VENUSES SATURNS JUPITERS ETC
-</script>
-
-
-
-      <script type="text/javascript" src="assets/js/apps.js"></script>
-
-
-
+<script type="text/javascript" src="assets/js/apps.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-<!--//var questions = '<div class="questions"><p id="countdown-timer"></p><form action=""><span>How many planets are there in our Solar System?</span><br><input type="radio" name="planets" value="seven"> 7<input type="radio" name="planets" value="eight"> 8 <input type="radio" name="planets" value="nine" id="answer1"> 9<input type="radio" name="planets" value="ten"> 10<br><hr><span>Which planet has the most moons?</span><br><input type="radio" name="moons" value="venus1" id="answer2"> Venus<input type="radio" name="moons" value="saturn1"> Saturn<input type="radio" name="moons" value="jupiter1"> Jupiter<input type="radio" name="moons" value="mars"> Mars<br><hr><span>The total mass of our sun equals how many earths?</span><br><input type="radio" name="mass" value="330k" id="answer3"> 330,000<input type="radio" name="mass" value="50k"> 50,000<input type="radio" name="mass" value="1200k"> 1,200,000<input type="radio" name="mass" value="125k"> 125,000<br> <hr><span>Which planet is closest to the sun?</span><br><input type="radio" name="closest" value="mercury" id="answer4">Mercury<input type="radio" name="closest" value="mars"> Mars<input type="radio" name="closest" value="venus2"> Venus<input type="radio" name="closest" value="earth"> Earth<br><hr><span>Which planet in our Solar System is the largest?</span><br><input type="radio" name="biggest" value="saturn2"> Saturn<input type="radio" name="biggest" value="jupiter2" id="answer5"> Jupiter<input type="radio" name="biggest" value="uranus"> Uranus<input type="radio" name="biggest" value="neptune"> Neptune</form></div>';
